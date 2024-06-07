@@ -103,7 +103,8 @@ def message():
   return HTMLResponse('<h1>Menu principal</h1>');
 
 
-@app.get("/computadoras", tags=["computadoras"],status_code=200,dependencies=[Depends(JWTBearer())])
+# @app.get("/computadoras", tags=["computadoras"],status_code=200,dependencies=[Depends(JWTBearer())])
+@app.get("/computadoras", tags=["computadoras"],status_code=200)
 def get_computadoras():
   db = Session()
   result = db.query(ComputerModel).all()
